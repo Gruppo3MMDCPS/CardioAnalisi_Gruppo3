@@ -56,7 +56,7 @@ namespace CardioAnalisiLibrary
             return risultato;
         }
 
-        //metodo per controllare Peso
+        //Metodo per controllare Peso
         public static double ControlloPeso(double peso)
         {
             int risultato = 0;
@@ -81,7 +81,7 @@ namespace CardioAnalisiLibrary
         }
 
 
-        //metodo per controllare durata 
+        //Metodo per controllare durata 
         public static double ControlloDurata(double durata)
         {
             int risultato = 0;
@@ -89,6 +89,30 @@ namespace CardioAnalisiLibrary
             {
                 Convert.ToDouble(durata);
                 if (durata >= 0 && durata <= 40)
+                {
+                    risultato = 1;
+                }
+                else
+                {
+                    risultato = -1;
+                }
+            }
+            catch (Exception)
+            {
+                risultato = -1;
+            }
+
+            return risultato;
+        }
+
+        //Metodo per controllare KmPercorsi
+        public static double ControlloKmPercorsi(double KmPercorsi)
+        {
+            int risultato = 0;
+            try
+            {
+                Convert.ToDouble(KmPercorsi);
+                if (KmPercorsi >= 0 && KmPercorsi <= 150)
                 {
                     risultato = 1;
                 }

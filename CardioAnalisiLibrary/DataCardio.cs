@@ -84,10 +84,10 @@ namespace CardioAnalisiLibrary
         {
             int CalorieBruciate = 0;
 
-            int ControlloEtà = Controlli.ControlloEta(anni);//Richiamo il class controlli e metodo controlloEta per fare controlli sull  età inserita
-            double ControlloPeso = Controlli.ControlloPeso(peso);//Richiamo il class controlli e metodo controlloPeso per fare controlli sull peso inserita
-            int ControlloFrequenza = Controlli.ControlloFrequenza(bpm);//Richiamo il class controlli e metodo controlloFrequenza per fare controlli sull frequenza inserita
-            double ControlloDurata = Controlli.ControlloDurata(durata);//Richiamo il class controlli e metodo controllodurata per fare controlli sull  tempo inserita
+            int ControlloEtà = Controlli.ControlloEta(anni); //Richiamo il class controlli e metodo controlloEta per fare controlli sull  età inserita
+            double ControlloPeso = Controlli.ControlloPeso(peso); //Richiamo il class controlli e metodo controlloPeso per fare controlli sull peso inserita
+            int ControlloFrequenza = Controlli.ControlloFrequenza(bpm); //Richiamo il class controlli e metodo controlloFrequenza per fare controlli sull frequenza inserita
+            double ControlloDurata = Controlli.ControlloDurata(durata); //Richiamo il class controlli e metodo controllodurata per fare controlli sull  tempo inserita
 
             if (sesso == "Uomo")
             {
@@ -115,6 +115,47 @@ namespace CardioAnalisiLibrary
             }
 
             return CalorieBruciate;
+        }
+
+        //Punto 4
+        //Metodo che permetta di calcolare la spesa energetica che si effettua in caso di corsa
+        public static double SpesaEnergeticaCorsa(double KmPercorsi, double peso)
+        {
+            double SpesaEnergetica = 0;
+
+            double ControlloPeso = Controlli.ControlloPeso(peso);//Richiamo il class controlli e metodo controlloPeso per fare controlli sull peso inserita
+            double ControlloKmPercorsi = Controlli.ControlloKmPercorsi(KmPercorsi);//Richiamo il class controlli e metodo controlloKmPercorsi per fare controlli sull Km percorsi inseriti
+
+            if (ControlloPeso != -1 && ControlloKmPercorsi != -1)
+            {
+                SpesaEnergetica = Math.Round(0.9 * KmPercorsi * peso);
+            }
+            else
+            {
+                SpesaEnergetica = -1;
+            }
+
+            return SpesaEnergetica;
+        }
+
+        //Metodo che permetta di calcolare la spesa energetica che si effettua in caso di camminata
+        public static double SpesaEnergeticaCamminata(double KmPercorsi, double peso)
+        {
+            double SpesaEnergetica = 0;
+
+            double ControlloPeso = Controlli.ControlloPeso(peso);//Richiamo il class controlli e metodo controlloPeso per fare controlli sull peso inserita
+            double ControlloKmPercorsi = Controlli.ControlloKmPercorsi(KmPercorsi);//Richiamo il class controlli e metodo controlloKmPercorsi per fare controlli sull Km percorsi inseriti
+
+            if (ControlloPeso != -1 && ControlloKmPercorsi != -1)
+            {
+                SpesaEnergetica = Math.Round(0.50 * KmPercorsi * peso);
+            }
+            else
+            {
+                SpesaEnergetica = -1;
+            }
+
+            return SpesaEnergetica;
         }
 
     }
