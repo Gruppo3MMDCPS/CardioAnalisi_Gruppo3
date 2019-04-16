@@ -58,8 +58,10 @@ namespace DataCardio.Test
 
         //Punto 3
         [DataTestMethod]
-        [DataRow("Uomo", 85, 75, 25, 120, -1507)]
-        [DataRow("Donna", 75, 55, 35, 60, -250)]
+        [DataRow("Uomo", 17, 72, 180, 15, -1)]
+        [DataRow("Donna", 0, 0, 0, 0, -1)]
+        [DataRow("Uomo", -43, -78, -170, -15, -1)]
+        [DataRow("Donna", 17, 72, 180, 15, -1)]
         public void Test_calorie(string sesso, int bpm, int peso, int anni, int durata, int valore_atteso)
         {
             int valore_ricevuto = Convert.ToInt32(CardioAnalisiLibrary.DataCardio.Calorie_Bruciate(sesso, bpm, peso, anni, durata));
