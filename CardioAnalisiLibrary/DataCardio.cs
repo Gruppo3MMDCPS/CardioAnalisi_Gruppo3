@@ -78,5 +78,44 @@ namespace CardioAnalisiLibrary
             return valoreFrequenza;
         }
 
+        //Punto 3
+        //Metodo che calcola le calorie bruciate durante un allemanteo di un uomo o di una donna
+        public static double Calorie_Bruciate(string sesso, int bpm, int peso, int anni, int durata)
+        {
+            int CalorieBruciate = 0;
+
+            int ControlloEtà = Controlli.ControlloEta(anni);//Richiamo il class controlli e metodo controlloEta per fare controlli sull  età inserita
+            double ControlloPeso = Controlli.ControlloPeso(peso);//Richiamo il class controlli e metodo controlloPeso per fare controlli sull peso inserita
+            int ControlloFrequenza = Controlli.ControlloFrequenza(bpm);//Richiamo il class controlli e metodo controlloFrequenza per fare controlli sull frequenza inserita
+            double ControlloDurata = Controlli.ControlloDurata(durata);//Richiamo il class controlli e metodo controllodurata per fare controlli sull  tempo inserita
+
+            if (sesso == "Uomo")
+            {
+
+                if(ControlloEtà != -1 && ControlloPeso != -1 && ControlloFrequenza != -1 && ControlloDurata != -1)
+                {
+                    CalorieBruciate = Convert.ToInt32(((anni * 0.2017) + (peso * 0.199) + (bpm * 0.6309) - 55.0969) * durata / 4.184);
+                }
+                else
+                {
+                    CalorieBruciate = -1;
+                }
+
+            }
+            else if (sesso == "Donna")
+            {
+                if (ControlloEtà != -1 && ControlloPeso != -1 && ControlloFrequenza != -1 && ControlloDurata != -1)
+                {
+                    CalorieBruciate = Convert.ToInt32(((anni * 0.074) + (peso * 0.126) + (bpm * 0.4472) - 20.4022) * durata / 4.184);
+                }
+                else
+                {
+                    CalorieBruciate = -1;
+                }
+            }
+
+            return CalorieBruciate;
+        }
+
     }
 }

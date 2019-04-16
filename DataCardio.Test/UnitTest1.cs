@@ -54,7 +54,17 @@ namespace DataCardio.Test
             string risposta = CardioAnalisiLibrary.DataCardio.FreqCardiacaRiposo(BattitiAlMinuto);
 
             Assert.AreEqual(risposta_attesa, risposta);
+        }
 
+        //Punto 3
+        [DataTestMethod]
+        [DataRow("Uomo", 85, 75, 25, 120, -1507)]
+        [DataRow("Donna", 75, 55, 35, 60, -250)]
+        public void Test_calorie(string sesso, int bpm, int peso, int anni, int durata, int valore_atteso)
+        {
+            int valore_ricevuto = Convert.ToInt32(CardioAnalisiLibrary.DataCardio.Calorie_Bruciate(sesso, bpm, peso, anni, durata));
+
+            Assert.AreEqual(valore_atteso, valore_ricevuto);
         }
     }
 }
