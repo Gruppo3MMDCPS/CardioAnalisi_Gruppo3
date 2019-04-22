@@ -109,5 +109,16 @@ namespace DataCardio.Test
 
             Assert.AreEqual(risposta_attesa, risposta);
         }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow (20, 160)]
+        [DataRow (33, 149)]
+        public void TestMethodCalcoliMultipli(int anni, int risposta_attesa)
+        {
+            int risposta = CardioAnalisiLibrary.DataCardio.CalcoliMultipli(anni);
+
+            Assert.AreEqual(risposta, risposta_attesa);
+        }
     }
 }

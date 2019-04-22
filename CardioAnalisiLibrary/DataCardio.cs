@@ -123,8 +123,8 @@ namespace CardioAnalisiLibrary
         {
             double SpesaEnergetica = 0;
 
-            double ControlloPeso = Controlli.ControlloPeso(peso);//Richiamo il class controlli e metodo controlloPeso per fare controlli sull peso inserita
-            double ControlloKmPercorsi = Controlli.ControlloKmPercorsi(KmPercorsi);//Richiamo il class controlli e metodo controlloKmPercorsi per fare controlli sull Km percorsi inseriti
+            double ControlloPeso = Controlli.ControlloPeso(peso); //Richiamo il class controlli e metodo controlloPeso per fare controlli sull peso inserita
+            double ControlloKmPercorsi = Controlli.ControlloKmPercorsi(KmPercorsi); //Richiamo il class controlli e metodo controlloKmPercorsi per fare controlli sull Km percorsi inseriti
 
             if (ControlloPeso != -1 && ControlloKmPercorsi != -1)
             {
@@ -143,8 +143,8 @@ namespace CardioAnalisiLibrary
         {
             double SpesaEnergetica = 0;
 
-            double ControlloPeso = Controlli.ControlloPeso(peso);//Richiamo il class controlli e metodo controlloPeso per fare controlli sull peso inserita
-            double ControlloKmPercorsi = Controlli.ControlloKmPercorsi(KmPercorsi);//Richiamo il class controlli e metodo controlloKmPercorsi per fare controlli sull Km percorsi inseriti
+            double ControlloPeso = Controlli.ControlloPeso(peso); //Richiamo il class controlli e metodo controlloPeso per fare controlli sull peso inserita
+            double ControlloKmPercorsi = Controlli.ControlloKmPercorsi(KmPercorsi); //Richiamo il class controlli e metodo controlloKmPercorsi per fare controlli sull Km percorsi inseriti
 
             if (ControlloPeso != -1 && ControlloKmPercorsi != -1)
             {
@@ -158,5 +158,25 @@ namespace CardioAnalisiLibrary
             return SpesaEnergetica;
         }
 
+        //Punto 5
+
+        public static int CalcoliMultipli(int eta)
+        {
+            int media = MediaBattiti(eta);
+
+            return media;
+        }
+
+        public static int MediaBattiti(int eta)
+        {
+            int media, max, min;
+
+            max = CalcoloFrequenzaMax(eta);
+            min = CalcoloFrequenzaMin(eta);
+
+            media = (max + min) / 2;
+
+            return media;
+        }
     }
 }
