@@ -158,25 +158,66 @@ namespace CardioAnalisiLibrary
             return SpesaEnergetica;
         }
 
-        //Punto 5
-
-        public static int CalcoliMultipli(int eta)
+        //Punto 5a
+        public double CalcoloMediaBattitiGiornaliera(List<int> battitiogniora)
         {
-            int media = MediaBattiti(eta);
-
+            double media = 0;
+            for (int i = 0; i < battitiogniora.Count; i++)
+            {
+                media = media + battitiogniora[i];
+            }
+            media = media / battitiogniora.Count;
+            media = Math.Round(media, 2);
             return media;
         }
 
-        public static int MediaBattiti(int eta)
+        //Punto 5b
+        public double CalcoloBattitiRiposo(List<int> battitigiornalieri)
         {
-            int media, max, min;
-
-            max = CalcoloFrequenzaMax(eta);
-            min = CalcoloFrequenzaMin(eta);
-
-            media = (max + min) / 2;
-
+            double media = CalcoloMediaBattitiGiornaliera(battitigiornalieri);
             return media;
+        }
+
+        //Punto 5c
+        public double HRV(List<double> tempotraduebatti)
+        {
+            double frequenza = 0;
+            double moltiplicazione;
+            moltiplicazione = tempotraduebatti[0];
+            for (int i = 1; i < tempotraduebatti.Count; i++)
+            {
+                moltiplicazione = moltiplicazione * tempotraduebatti[i];
+            }
+            frequenza = 1 / moltiplicazione;
+            frequenza = Math.Round(frequenza, 2);
+            return frequenza;
+        }
+
+        //Punto 5d
+        public List<int> OrdineCrescente(List<int> battitigiornata)
+        {
+            int temp = 0;
+            for (int j = 0; j < (battitigiornata.Count - 1); j++)
+            {
+                for (int i = 0; i < (battitigiornata.Count - 1); i++)
+                {
+                    if (battitigiornata[i] > battitigiornata[i + 1])
+                    {
+                        temp = battitigiornata[i];
+                        battitigiornata[i] = battitigiornata[i + 1];
+                        battitigiornata[i + 1] = temp;
+                    }
+                }
+            }
+            return battitigiornata;
+        }
+
+        //Punto 6
+        public double Gravidanza()
+        {
+            double battiti = 0;
+            battiti = 75 + (75 * 0.09);
+            return battiti;
         }
     }
 }

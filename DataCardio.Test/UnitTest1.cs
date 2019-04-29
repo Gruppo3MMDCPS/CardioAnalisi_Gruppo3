@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Text;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CardioAnalisiLibrary;
 
 namespace DataCardio.Test
 {
@@ -69,7 +72,7 @@ namespace DataCardio.Test
             Assert.AreEqual(valore_atteso, valore_ricevuto);
         }
 
-        //Punto 4
+        //Punto 4 Corsa
         [TestMethod]
         [DataTestMethod]
         [DataRow(2, 72, 130)]
@@ -90,6 +93,7 @@ namespace DataCardio.Test
             Assert.AreEqual(risposta_attesa, risposta);
         }
 
+        //Punto 4 Camminata
         [TestMethod]
         [DataTestMethod]
         [DataRow(3, 70, 105)]
@@ -110,15 +114,47 @@ namespace DataCardio.Test
             Assert.AreEqual(risposta_attesa, risposta);
         }
 
+        //Punto 5a
         [TestMethod]
-        [DataTestMethod]
-        [DataRow (20, 160)]
-        [DataRow (33, 149)]
-        public void TestMethodCalcoliMultipli(int anni, int risposta_attesa)
+        public void TestCalcoloMediaBattitiGiornaliera()
         {
-            int risposta = CardioAnalisiLibrary.DataCardio.CalcoliMultipli(anni);
+            CardioAnalisiLibrary.DataCardio cardio = new CardioAnalisiLibrary.DataCardio();
+            List<int> bpmgiornata = new List<int> { 40, 38, 48, 35 };
+            double media;
+            media = cardio.CalcoloMediaBattitiGiornaliera(bpmgiornata);
+            Assert.AreEqual(40.25, media);
+        }
 
-            Assert.AreEqual(risposta, risposta_attesa);
+        //Punto 5b
+        [TestMethod]
+        public void TestCalcoloBattitiRiposo()
+        {
+            CardioAnalisiLibrary.DataCardio cardio = new CardioAnalisiLibrary.DataCardio();
+            List<int> bpmgiornata = new List<int> { 40, 38, 48, 35 };
+            double media;
+            media = cardio.CalcoloBattitiRiposo(bpmgiornata);
+            Assert.AreEqual(40.25, media);
+        }
+
+        //Punto 5c
+        [TestMethod]
+        public void TestHRV()
+        {
+            CardioAnalisiLibrary.DataCardio cardio = new CardioAnalisiLibrary.DataCardio();
+            double frequenza = 0;
+            List<double> tempitempotraduebatti = new List<double> { 0.8, 1.2, 1.0, 0.6, 0.9 };
+            frequenza = cardio.HRV(tempitempotraduebatti);
+            Assert.AreEqual(1.93, frequenza);
+        }
+
+        //Punto 5d
+        [TestMethod]
+        public void TestOrdineCrescente()
+        {
+            CardioAnalisiLibrary.DataCardio cardio = new CardioAnalisiLibrary.DataCardio();
+            List<int> bpmgiornata = new List<int> { 40, 38, 48, 35 };
+            bpmgiornata = cardio.OrdineCrescente(bpmgiornata);
+            Assert.AreEqual(35, bpmgiornata[0]);
         }
     }
 }
