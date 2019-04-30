@@ -1,0 +1,21 @@
+﻿<Window x:Class="CardioAnalisi_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CardioAnalisi_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="450" Background="White">
+    <Grid Background="#FFBD58CD">
+        <Button Content="Calcola il massimo dei battiti cardiaci sopportabili" x:Name="btn_maxbattiti" HorizontalAlignment="Left" Margin="68,10,0,0" VerticalAlignment="Top" Width="298" Height="38" Click="Btn_maxbattiti_Click" FontFamily="Verdana Pro Cond SemiBold"/>
+        <Button Content="Calcola il massimo ed il minimo dei battiti in palestra" x:Name="btn_maxminbattitipalestra" HorizontalAlignment="Left" Margin="68,53,0,0" VerticalAlignment="Top" Width="298" Height="38" Click="Btn_maxminbattitipalestra_Click" FontFamily="Verdana Pro Cond SemiBold"/>
+        <Button Content="Calcola la tua condizione cardiaca" x:Name="btn_soffriqualcosa" HorizontalAlignment="Left" Margin="68,96,0,0" VerticalAlignment="Top" Width="298" Height="38" Click="Btn_soffriqualcosa_Click" FontFamily="Verdana Pro Cond SemiBold"/>
+        <Button Content="Calcolo della calorie bruciate" x:Name="btn_calorie" HorizontalAlignment="Left" Margin="68,139,0,0" VerticalAlignment="Top" Width="298" Height="38" Click="Btn_calorie_Click" FontFamily="Verdana Pro Cond SemiBold"/>
+        <Button Content="Calcolo della spesa energetica" x:Name="btn_spesaenergetica" HorizontalAlignment="Left" Margin="68,182,0,0" VerticalAlignment="Top" Width="298" Height="38" Click="Btn_spesaenergetica_Click" FontFamily="Verdana Pro Cond SemiBold"/>
+        <Button Content="Calcola la media dei battiti giornalieri" x:Name="btn_mediabatti" HorizontalAlignment="Left" Margin="68,225,0,0" VerticalAlignment="Top" Width="298" Height="38" Click="Btn_mediabatti_Click" FontFamily="Verdana Pro Cond SemiBold"/>
+        <Button Content="Calcola i battiti a riposo" x:Name="btn_calcolobattitoariposo" HorizontalAlignment="Left" Margin="68,268,0,0" VerticalAlignment="Top" Width="298" Height="38" Click="Btn_calcolobattitoariposo_Click" FontFamily="Verdana Pro Cond SemiBold"/>
+        <Button Content="Ordina in modo crescente i tuoi battiti cardiaci" x:Name="btn_ordinecrescentebattiti" HorizontalAlignment="Left" Margin="68,311,0,0" VerticalAlignment="Top" Width="298" Height="38" Click="Btn_ordinecrescentebattiti_Click" FontFamily="Verdana Pro Cond SemiBold"/>
+        <Button Content="Frequenza cardiaca (HRV)" x:Name="btn_HRV" HorizontalAlignment="Left" Margin="68,354,0,0" VerticalAlignment="Top" Width="298" Height="38" Click="Btn_HRV_Click" FontFamily="Verdana Pro Cond SemiBold"/>
+        <Button Content="Battiti Gravidanza" x:Name="btn_gravidanza" HorizontalAlignment="Left" Margin="68,397,0,0" VerticalAlignment="Top" Width="298" Height="38" Click="Btn_gravidanza_Click" Background="#FFDDDDDD" FontFamily="Verdana Pro Cond SemiBold"/>
+    </Grid>
+</Window>
