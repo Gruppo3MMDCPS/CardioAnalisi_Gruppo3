@@ -37,8 +37,16 @@ namespace CardioAnalisi_WPF
 
         private void Btn_aggiungi_Click(object sender, RoutedEventArgs e)
         {
-            battiti.Add(Convert.ToInt32(txt_battiti.Text));
-            lbl_listalive.Content = lbl_listalive.Content + " " + txt_battiti.Text;
+            try
+            {
+                battiti.Add(Convert.ToInt32(txt_battiti.Text));
+                lbl_listalive.Content = lbl_listalive.Content + " " + txt_battiti.Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Errore nell'inserimento dei dati ! CONTROLLA");
+                txt_battiti.Clear();
+            }
         }
 
         private void Btn_calcolamedia_Click(object sender, RoutedEventArgs e)
