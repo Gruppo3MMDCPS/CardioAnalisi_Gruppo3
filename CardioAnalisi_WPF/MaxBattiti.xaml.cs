@@ -15,13 +15,26 @@ using System.Windows.Shapes;
 namespace CardioAnalisi_WPF
 {
     /// <summary>
-    /// Logica di interazione per CalcoloBattitiPalestra.xaml
+    /// Logica di interazione per MaxBattiti.xaml
     /// </summary>
-    public partial class CalcoloBattitiPalestra : Window
+    public partial class MaxBattiti : Window
     {
-        public CalcoloBattitiPalestra()
+        public MaxBattiti()
         {
             InitializeComponent();
+        }
+        private void Btn_calcolo_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int eta = Convert.ToInt32(txt_eta.Text);
+                string risultato = CardioAnalisiLibrary.DataCardio.CalcoloFrequenzaMax(eta).ToString();
+                lbl_risultato.Content = risultato;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Errore nell'inserimento dei dati ! CONTROLLA");
+            }
         }
 
         private void Btn_back_Click(object sender, RoutedEventArgs e)
@@ -29,22 +42,7 @@ namespace CardioAnalisi_WPF
             MainWindow main = new MainWindow();
             main.Show();
             this.Close();
-        }
 
-        private void Btn_calcolo_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                int eta = Convert.ToInt32(txt_eta.Text);
-                double max = CardioAnalisiLibrary.DataCardio.CalcoloFrequenzaMax(eta);
-                double min = CardioAnalisiLibrary.DataCardio.CalcoloFrequenzaMin(eta);
-                lbl_risultatomax.Content = max;
-                lbl_risultatomin.Content = min;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Errore nell'inserimento dei dati ! CONTROLLA");
-            }
         }
     }
 }

@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SpesaEnergetica.xaml.cs">
+      <DependentUpon>SpesaEnergetica.xaml</DependentUpon>
+    </Compile>
     <Page Include="BattitiARiposo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -64,6 +67,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CalcoloBattitiPalestra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CalorieBruciate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HRV.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -84,18 +95,49 @@
     <Compile Include="CalcoloBattitiPalestra.xaml.cs">
       <DependentUpon>CalcoloBattitiPalestra.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CalorieBruciate.xaml.cs">
+      <DependentUpon>CalorieBruciate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HRV.xaml.cs">
+      <DependentUpon>HRV.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MalattiaCuore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MaxBattiti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MediaGiornaliera.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrdineCrescente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpesaEnergetica.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MalattiaCuore.xaml.cs">
+      <DependentUpon>MalattiaCuore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MaxBattiti.xaml.cs">
+      <DependentUpon>MaxBattiti.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MediaGiornaliera.xaml.cs">
       <DependentUpon>MediaGiornaliera.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrdineCrescente.xaml.cs">
+      <DependentUpon>OrdineCrescente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

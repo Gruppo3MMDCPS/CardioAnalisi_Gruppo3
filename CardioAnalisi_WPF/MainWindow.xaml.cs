@@ -25,7 +25,7 @@ namespace CardioAnalisi_WPF
         CalcoloBattitiPalestra pal;
         MalattiaCuore mal;
         SpesaEnergetica spe;
-        CalcoloMediaBattitiGiornaliera med;
+        MediaGiornaliera med;
         BattitiARiposo rip;
         OrdineCrescente ord;
         HRV hrv;
@@ -39,7 +39,7 @@ namespace CardioAnalisi_WPF
             mal = new MalattiaCuore();
             cal = new CalorieBruciate();
             spe = new SpesaEnergetica();
-            med = new CalcoloMediaBattitiGiornaliera();
+            med = new MediaGiornaliera();
             rip = new BattitiARiposo();
             ord = new OrdineCrescente();
             hrv = new HRV();

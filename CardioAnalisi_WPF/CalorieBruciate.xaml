@@ -1,0 +1,24 @@
+﻿<Window x:Class="CardioAnalisi_WPF.CalorieBruciate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CardioAnalisi_WPF"
+        mc:Ignorable="d"
+        Title="CalorieBruciate" Height="800" Width="450">
+    <Grid  Background="#FFBD58CD">
+        <Button Content="Back" x:Name="btn_back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="98" Height="26" Click="Btn_back_Click"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txt_durata" Height="23" Margin="10,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="422"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txt_frequenza" Height="23" Margin="10,238,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="422"/>
+        <TextBox HorizontalAlignment="Left" Height="23" x:Name="txt_peso" Margin="10,182,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="422"/>
+        <TextBox HorizontalAlignment="Left" Height="23" x:Name="txt_eta" Margin="10,293,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="422"/>
+        <Label Content="Inserisci la durata della sessione : " HorizontalAlignment="Left" Margin="10,104,0,0" VerticalAlignment="Top" Width="422"/>
+        <Label Content="Inserisci il tuo peso : " HorizontalAlignment="Left" Margin="10,156,0,0" VerticalAlignment="Top" Width="422"/>
+        <Label Content="Inserisci la tua frequenza media cardiaca : " HorizontalAlignment="Left" Margin="10,212,0,0" VerticalAlignment="Top" Width="422"/>
+        <Label Content="Inserisci la tua eta : " HorizontalAlignment="Left" Margin="10,266,0,0" VerticalAlignment="Top" Width="422"/>
+        <Button Content="Calcola" x:Name="btn_calcolo" HorizontalAlignment="Left" Margin="10,365,0,0" VerticalAlignment="Top" Width="422" Height="111" Click="Btn_calcolo_Click"/>
+        <Button Content="Maschio" x:Name="btn_Maschio" HorizontalAlignment="Left" Margin="10,321,0,0" VerticalAlignment="Top" Width="202" Height="39" Click="Btn_Maschio_Click"/>
+        <Button Content="Femmina" x:Name="btn_Femmina" HorizontalAlignment="Left" Margin="230,321,0,0" VerticalAlignment="Top" Width="202" Height="39" Click="Btn_Femmina_Click"/>
+        <Label Content="" x:Name="lbl_risultato" HorizontalAlignment="Left" Margin="10,495,0,0" VerticalAlignment="Top" Height="93" Width="422"/>
+    </Grid>
+</Window>

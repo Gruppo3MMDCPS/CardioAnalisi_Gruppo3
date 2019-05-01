@@ -89,7 +89,7 @@ namespace CardioAnalisiLibrary
             int ControlloFrequenza = Controlli.ControlloFrequenza(bpm); //Richiamo il class controlli e metodo controlloFrequenza per fare controlli sull frequenza inserita
             double ControlloDurata = Controlli.ControlloDurata(durata); //Richiamo il class controlli e metodo controllodurata per fare controlli sull  tempo inserita
 
-            if (sesso == "Uomo")
+            if (sesso == "M")
             {
 
                 if(ControlloEtà != -1 && ControlloPeso != -1 && ControlloFrequenza != -1 && ControlloDurata != -1)
@@ -102,7 +102,7 @@ namespace CardioAnalisiLibrary
                 }
 
             }
-            else if (sesso == "Donna")
+            else if (sesso == "F")
             {
                 if (ControlloEtà != -1 && ControlloPeso != -1 && ControlloFrequenza != -1 && ControlloDurata != -1)
                 {

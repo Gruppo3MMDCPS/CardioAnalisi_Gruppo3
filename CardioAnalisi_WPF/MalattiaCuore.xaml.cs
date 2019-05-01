@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace CardioAnalisi_WPF
 {
     /// <summary>
-    /// Logica di interazione per CalcoloBattitiPalestra.xaml
+    /// Logica di interazione per MalattiaCuore.xaml
     /// </summary>
-    public partial class CalcoloBattitiPalestra : Window
+    public partial class MalattiaCuore : Window
     {
-        public CalcoloBattitiPalestra()
+        public MalattiaCuore()
         {
             InitializeComponent();
         }
@@ -35,11 +35,9 @@ namespace CardioAnalisi_WPF
         {
             try
             {
-                int eta = Convert.ToInt32(txt_eta.Text);
-                double max = CardioAnalisiLibrary.DataCardio.CalcoloFrequenzaMax(eta);
-                double min = CardioAnalisiLibrary.DataCardio.CalcoloFrequenzaMin(eta);
-                lbl_risultatomax.Content = max;
-                lbl_risultatomin.Content = min;
+                int battiti = Convert.ToInt32(txt_battiti.Text);
+                string risultato = CardioAnalisiLibrary.DataCardio.FreqCardiacaRiposo(battiti);
+                lbl_risultato.Content = risultato;
             }
             catch (Exception)
             {

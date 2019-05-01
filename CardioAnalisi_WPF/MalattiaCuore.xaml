@@ -1,0 +1,16 @@
+﻿<Window x:Class="CardioAnalisi_WPF.MalattiaCuore"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CardioAnalisi_WPF"
+        mc:Ignorable="d"
+        Title="MalattiaCuore" Height="800" Width="450">
+    <Grid  Background="#FFBD58CD">
+        <Button Content="Back" x:Name="btn_back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="98" Height="26" Click="Btn_back_Click"/>
+        <Label Content="Dopo esserti riposato misura il tuo battito cardiaco ed inserisci :" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,152,0,0" x:Name="txt_battiti" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="422"/>
+        <Button Content="Calcola ! " x:Name="btn_calcolo" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Width="422" Height="78" Click="Btn_calcolo_Click"/>
+        <Label Content="" x:Name="lbl_risultato" HorizontalAlignment="Left" Margin="10,324,0,0" VerticalAlignment="Top" Height="146" Width="422"/>
+    </Grid>
+</Window>
