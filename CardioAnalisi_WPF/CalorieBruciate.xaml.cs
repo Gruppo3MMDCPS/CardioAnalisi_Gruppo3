@@ -27,6 +27,10 @@ namespace CardioAnalisi_WPF
             sesso = "";
             data = new CardioAnalisiLibrary.DataCardio();
             btn_calcolo.IsEnabled = false;
+            txt_eta.MaxLength = 3;
+            txt_peso.MaxLength = 3;
+            txt_durata.MaxLength = 3;
+            txt_frequenza.MaxLength = 3;
         }
 
         private void Btn_back_Click(object sender, RoutedEventArgs e)

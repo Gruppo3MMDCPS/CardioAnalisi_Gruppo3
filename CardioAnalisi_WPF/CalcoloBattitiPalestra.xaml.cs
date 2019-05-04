@@ -22,6 +22,7 @@ namespace CardioAnalisi_WPF
         public CalcoloBattitiPalestra()
         {
             InitializeComponent();
+            txt_eta.MaxLength = 3;
         }
 
         private void Btn_back_Click(object sender, RoutedEventArgs e)

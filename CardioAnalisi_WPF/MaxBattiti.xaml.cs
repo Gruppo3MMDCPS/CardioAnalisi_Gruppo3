@@ -22,6 +22,7 @@ namespace CardioAnalisi_WPF
         public MaxBattiti()
         {
             InitializeComponent();
+            txt_eta.MaxLength = 3;
         }
         private void Btn_calcolo_Click(object sender, RoutedEventArgs e)
         {

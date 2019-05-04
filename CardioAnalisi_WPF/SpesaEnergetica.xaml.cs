@@ -24,6 +24,8 @@ namespace CardioAnalisi_WPF
         {
             InitializeComponent();
             btn_calcolo.IsEnabled = false;
+            txt_kgpesocorporeo.MaxLength = 3;
+            txt_kmpercorso.MaxLength = 2;
         }
 
         private void Btn_calcolo_Click(object sender, RoutedEventArgs e)

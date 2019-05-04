@@ -26,6 +26,7 @@ namespace CardioAnalisi_WPF
             InitializeComponent();
             tempotraduebattiti = new List<double>();
             data = new CardioAnalisiLibrary.DataCardio();
+            txt_battiti.MaxLength = 3;
         }
 
         private void Btn_aggiungi_Click(object sender, RoutedEventArgs e)

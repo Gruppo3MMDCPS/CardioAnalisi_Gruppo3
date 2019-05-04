@@ -26,6 +26,7 @@ namespace CardioAnalisi_WPF
             InitializeComponent();
             battiti = new List<int>();
             data = new CardioAnalisiLibrary.DataCardio();
+            txt_battiti.MaxLength = 3;
         }
 
         private void Btn_ordinamento_Click(object sender, RoutedEventArgs e)
